@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in_activity_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activity.AddStudentActivity">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_linear_layout"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/root_container_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorBlack"
+                    android:text="Note : roll number is unique id"
+                    android:textSize="@dimen/_10sdp"/>
+
+                <ImageView
+                    android:id="@+id/passport_photo_image_view"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/placeholder"
+                    android:contentDescription="@string/app_name" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_name_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="First Name"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:nextFocusDown="@+id/last_name_text_input_edit_text"
+                        android:textSize="@dimen/_15sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/last_name_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/last_name_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="Last Name"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:nextFocusUp="@id/first_name_text_input_edit_text"
+                        android:nextFocusDown="@+id/branch_text_input_edit_text"
+                        android:textSize="@dimen/_15sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/branch_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/branch_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="Branch"
+                        android:maxLines="1"
+                        android:inputType="textCapWords"
+                        android:nextFocusUp="@id/last_name_text_input_edit_text"
+                        android:nextFocusDown="@+id/roll_number_text_input_layout"
+                        android:textSize="@dimen/_15sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/roll_number_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/roll_number_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="Roll Number"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusUp="@id/branch_text_input_edit_text"
+                        android:nextFocusDown="@+id/grade_text_input_layout"
+                        android:textSize="@dimen/_15sdp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/grade_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/grade_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="Grade"
+                        android:maxLines="1"
+                        android:maxLength="1"
+                        android:inputType="textCapWords"
+                        android:nextFocusUp="@id/roll_number_text_input_layout"
+                        android:nextFocusDown="@+id/phone_number_text_input_layout"
+                        android:textSize="@dimen/_15sdp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_number_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_number_text_input_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:hint="Phone Number"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:nextFocusUp="@id/grade_text_input_edit_text"
+                        android:textSize="@dimen/_15sdp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_button_background"
+            android:inputType="text"
+            android:shadowColor="@android:color/transparent"
+            android:text="Close"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_20sdp"/>
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginLeft="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_button_background"
+            android:inputType="text"
+            android:shadowColor="@android:color/transparent"
+            android:text="Add Now"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_20sdp"/>
+    </LinearLayout>
+</RelativeLayout>
